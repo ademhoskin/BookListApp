@@ -10,22 +10,61 @@
     <script src="script.js" defer></script>
 </head>
 <body class="bg-stone-800 font-helve">
-<main class="flex justify-center items-center h-screen">
+  <main class="flex justify-center items-center h-screen">
 
-  <section class="text-white text-8xl -ml-64">
-    <p>Adem's Book List</p>
-    <p>App</p>
-  </section>
+    <!-- text -->
+    <section class="text-white text-8xl -ml-64">
+      <p>Adem's Book List</p>
+      <p>App</p>
+    </section>
 
-  <div class="flex flex-col items-center ml-32">
-    <button class="w-32 h-32 rounded-full bg-green-500 hover:bg-green-800 mt-4 text-white text-3xl" id="addBook">
-      Add Book
-    </button>
-    <button class="w-32 h-32 rounded-full bg-red-500 hover:bg-red-800 mt-4 text-white text-3xl" id="showBooks">
-      View List
-    </button>
-  </div>
+    <!-- open add modal button -->
+    <div class="flex flex-col items-center ml-32">
+      <button class="w-32 h-32 rounded-full bg-green-500 hover:bg-green-800 mt-4 text-white text-3xl" id="openAddModal" onclick="addModal.showModal()">
+        Add Book
+      </button>
+      <!-- add Book modal -->
+      <dialog id="addModal" class="modal">
+        <form method="dialog" class="modal-box bg-stone-900 px-1024 flex flex-col justify-between">
+          <h3 class="font-bold text-xl">Add a Book!</h3>
+          <p class="py-4 text-sm">Press ESC key or Close button to close</p>
+          <!--create modal that takes input for title, author, genre and if it was read-->
+          <label for="title " class="pb-2">Title:</label>
+          <input type="text" id="title" name="title" placeholder="Title" class="border-2 border-black rounded-lg mb-2">
+          <label for="author" class="pb-2">Author:</label>
+          <input type="text" id="author" name="author" placeholder="Author" class="border-2 border-black rounded-lg mb-2">
+          <label for="genre" class="pb-2">Genre:</label>
+          <input type="text" id="genre" name="genre" placeholder="Genre" class="border-2 border-black rounded-lg mb-2">
+          <div>
+            <label for="read"class="pb-2">Read:</label>
+            <input type="checkbox" id="readBoolean" name="read" value="read" class="border-2 border-black rounded-lg mb-2">
+          </div>
+          <div class="modal-action">
+            <button class="bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded" id="addBook">Add Book</button>
+            <!--close the modal without adding -->
+            <button class="bg-red-500 hover:bg-red-800 text-white font-bold py-2 px-4 rounded" id="close">Close</button>
+          </div>
+        </form>
+      </dialog>
+      <!-- open book list modal -->
+      <button class="w-32 h-32 rounded-full bg-red-500 hover:bg-red-800 mt-4 text-white text-3xl" id="showBooks" onclick="bookList.showModal()">
+        View List
+      </button>
+      <!-- book list modal -->
+      <dialog id="bookList" class="modal">
+        <form method="dialog" class="modal-box bg-stone-900 px-1024 flex flex-col justify-between">
+          <h3 class="font-bold text-xl">Book List</h3>
+          <p class="py-4 text-sm">Press ESC key or Close button to close</p>
+          <div id="booksContainer">
+            <!-- books will be added here -->
+          </div>
+          <div class="modal-action">
+            <button class="bg-red-500 hover:bg-red-800 text-white font-bold py-2 px-4 rounded" id="close">Close</button>
+          </div>
+        </form>
+    </div>
 
-</main>
+    </div>
+  </main>
 </body>
 </html>
