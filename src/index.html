@@ -35,10 +35,13 @@
           <input type="text" id="author" name="author" placeholder="Author" class="border-2 border-black rounded-lg mb-2">
           <label for="genre" class="pb-2">Genre:</label>
           <input type="text" id="genre" name="genre" placeholder="Genre" class="border-2 border-black rounded-lg mb-2">
-          <div>
+
+          <!-- checkbox container -->
+          <div class="flex flex-row justify-start">
             <label for="read"class="pb-2">Read:</label>
-            <input type="checkbox" id="readBoolean" name="read" value="read" class="border-2 border-black rounded-lg mb-2">
+            <input type="checkbox" id="readBoolean" name="read" value="read" class="checkbox checkbox-sm ml-4">
           </div>
+
           <div class="modal-action">
             <button class="bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded" id="addBook">Add Book</button>
             <!--close the modal without adding -->
