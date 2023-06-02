@@ -15,13 +15,17 @@ class Book {
 }
 
 addBtn.addEventListener("click", () => {
-  const title = document.getElementById("title").value;
-  const author = document.getElementById("author").value;
-  const genre = document.getElementById("genre").value;
-  const read = document.getElementById("readBoolean").checked;
-  const newBook = new Book(title, author, genre, read);
+  let title = document.getElementById("title").value;
+  let author = document.getElementById("author").value;
+  let genre = document.getElementById("genre").value;
+  let read = document.getElementById("readBoolean").checked;
+  let newBook = new Book(title, author, genre, read);
   myLibrary.push(newBook);
   console.log(myLibrary);
+  title = "";
+  author = "";
+  genre = "";
+  read = false;
 });
 // create an eventlistener for the showBooksBtn that on click, will display the books in the myLibrary array in the bookList modal window
 showBooksBtn.addEventListener("click", () => {
